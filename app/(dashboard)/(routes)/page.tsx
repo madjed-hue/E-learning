@@ -1,3 +1,3 @@
 export default function Home() {
-  return <p>Hello World!</p>;
+  return <p>protected page</p>;
 }
