@@ -17,6 +17,7 @@ export const NavbarRoutes = () => {
   const isTeacherPage = pathname?.startsWith("/teacher");
   const isCoursePage = pathname?.includes("/courses");
   const isSearchPage = pathname === "/search";
+  const isTeacher = false;
 
   return (
     <>
@@ -30,20 +31,21 @@ export const NavbarRoutes = () => {
             Exit
           </Button>
         </Link>
-        {/* {isTeacherPage || isCoursePage ? (
+        {isTeacherPage || isCoursePage ? (
           <Link href="/">
             <Button size="sm" variant="ghost">
               <LogOut className="h-4 w-4 mr-2" />
               Exit
             </Button>
           </Link>
-        ) : isTeacher(userId) ? (
+        ) : isTeacher ? (
+          // isTeacher(userId)
           <Link href="/teacher/courses">
             <Button size="sm" variant="ghost">
               Teacher mode
             </Button>
           </Link>
-        ) : null} */}
+        ) : null}
         <UserButton afterSignOutUrl="/" />
       </div>
     </>
