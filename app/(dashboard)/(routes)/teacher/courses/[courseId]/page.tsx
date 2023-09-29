@@ -1,5 +1,10 @@
 import { auth } from "@clerk/nextjs";
-import { CircleDollarSign, LayoutDashboard, ListChecks } from "lucide-react";
+import {
+  CircleDollarSign,
+  File,
+  LayoutDashboard,
+  ListChecks,
+} from "lucide-react";
 import { redirect } from "next/navigation";
 
 import { db } from "@/lib/db";
@@ -94,10 +99,7 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
               <IconBadge icon={ListChecks} />
               <h2 className="text-xl">Course chapters</h2>
             </div>
-            {/* <ChaptersForm
-                initialData={course}
-                courseId={course.id}
-              /> */}
+            <ChaptersForm initialData={course} courseId={course.id} />
           </div>
           <div>
             <div className="flex items-center gap-x-2">
@@ -108,7 +110,7 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
           </div>
           <div>
             <div className="flex items-center gap-x-2">
-              {/* <IconBadge icon={File} /> */}
+              <IconBadge icon={File} />
               <h2 className="text-xl">Resources & Attachments</h2>
             </div>
             <AttachmentForm initialData={course} courseId={course.id} />
